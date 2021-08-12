@@ -1,0 +1,27 @@
+.content {
+  grid-column: 7 / -1;
+  grid-row: 1/7;
+  padding: 8rem;
+
+  & h1 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+  }
+
+  & button {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    & img {
+      margin-left: 2rem;
+    }
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
