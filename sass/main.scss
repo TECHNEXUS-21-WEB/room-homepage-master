@@ -5,6 +5,14 @@
   --very-dark-gray: hsl(0, 0%, 27%);
 }
 
+// @media screen and (max-width: 82.67em) {
+//   font-size: 70%;
+// }
+
+// @media screen and (max-width: 64em) {
+//   font-size: 75%;
+// }
+
 *,
 *::after,
 *::before {
@@ -15,12 +23,17 @@
 
 html {
   font-size: 62.5%;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 50%;
+  }
 }
 
 body {
   font-size: 1.6rem;
   font-family: 'Spartan', open-sans;
   font-weight: 500;
+  position: relative;
 }
 
 .paragraph {
@@ -47,3 +60,5 @@ body {
 
 @import './carousel';
 @import './content';
+@import './button';
+@import './header';

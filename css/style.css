@@ -16,11 +16,17 @@
 html {
   font-size: 62.5%;
 }
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 50%;
+  }
+}
 
 body {
   font-size: 1.6rem;
   font-family: "Spartan", open-sans;
   font-weight: 500;
+  position: relative;
 }
 
 .paragraph {
@@ -49,9 +55,15 @@ body {
   grid-column: 1/7;
   grid-row: 1/7;
 }
+@media screen and (max-width: 768px) {
+  .carousel {
+    grid-column: 1/-1;
+  }
+}
 .carousel-content {
   width: 300%;
   display: flex;
+  transition: margin 0.3s;
 }
 .carousel-slide {
   flex: 1;
@@ -66,6 +78,12 @@ body {
   grid-column: 7/-1;
   grid-row: 1/7;
   padding: 8rem;
+}
+@media screen and (max-width: 768px) {
+  .content {
+    grid-column: 1/-1;
+    grid-row: -5;
+  }
 }
 .content h1 {
   font-size: 3.5rem;
@@ -84,6 +102,101 @@ body {
 }
 .content button:hover {
   opacity: 0.5;
+}
+
+.btn {
+  grid-column: 7/8;
+  grid-row: 6/7;
+  display: flex;
+}
+@media screen and (max-width: 768px) {
+  .btn {
+    grid-column: 10/-1;
+  }
+}
+.btn button {
+  background-color: var(--black);
+  border: none;
+  flex: 1;
+  cursor: pointer;
+}
+.btn button:hover {
+  background-color: var(--very-dark-gray);
+}
+.btn button:focus {
+  outline: none;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 2rem 5%;
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 4rem 5%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .header > * {
+    flex: 1;
+  }
+}
+.header-burger {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .header-burger {
+    display: block;
+  }
+}
+.header-burger button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.header-burger button:focus {
+  outline: none;
+}
+.header-logo {
+  margin-right: 5rem;
+}
+.header-list {
+  list-style: none;
+  display: flex;
+}
+@media screen and (max-width: 768px) {
+  .header-list {
+    display: none;
+  }
+}
+.header-item {
+  padding: 2rem;
+  position: relative;
+}
+.header-item::after {
+  position: absolute;
+  content: "";
+  background-color: var(--white);
+  width: 30%;
+  height: 0.3rem;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.header-item:hover::after {
+  opacity: 1;
+}
+.header-link:link, .header-link:visited {
+  text-decoration: none;
+  color: var(--white);
+  text-transform: lowercase;
 }
 
 /*# sourceMappingURL=style.css.map */
